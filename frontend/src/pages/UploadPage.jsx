@@ -68,6 +68,12 @@ export default function UploadPage() {
           <p>Taille conseillée: ≤ 10 Mo</p>
         </div>
       </div>
+      {isLoading && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/70 backdrop-blur-sm">
+          <div className="h-10 w-10 rounded-full border-4 border-brand/30 border-t-brand animate-spin" />
+          <p className="sr-only">Traitement en cours…</p>
+        </div>
+      )}
     </div>
   )
 }

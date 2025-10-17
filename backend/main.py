@@ -2,6 +2,7 @@ from fastapi import FastAPI, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response, JSONResponse
 import uvicorn
+import os
 
 app = FastAPI(
     title="ImmoGlam Backend",
@@ -59,11 +60,16 @@ async def enhance(image: UploadFile = File(...), prompt: str = Form(...)):
     - prompt: texte libre
 
     Réponse: octets de l'image améliorée, avec le même Content-Type que l'entrée.
+    Si la variable d'environnement `GEMINI_API_KEY` est définie, utilise
+    `enhance_image_with_gemini` (toujours mock pour l'instant).
     """
     try:
         original_bytes = await image.read()
-        # Utilise la fonction mock (vous pouvez basculer vers enhance_image_with_gemini quand prêt)
-        enhanced_bytes = enhance_image(original_bytes, prompt)
+        use_gemini = bool(os.environ.get("GEMINI_API_KEY"))
+        if use_gemini:
+            enhanced_bytes = enhance_image_with_gemini(original_bytes, prompt)
+        else:
+            enhanced_bytes = enhance_image(original_bytes, prompt)
         media_type = image.content_type or "image/jpeg"
         return Response(content=enhanced_bytes, media_type=media_type)
     except Exception as exc:  # pragma: no cover
