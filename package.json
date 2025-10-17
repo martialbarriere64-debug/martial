@@ -1,0 +1,27 @@
+{
+  "name": "immoglam",
+  "version": "1.0.0",
+  "description": "Application SaaS pour améliorer les photos immobilières avec l'IA",
+  "scripts": {
+    "install:backend": "cd backend && pip install -r requirements.txt",
+    "install:frontend": "cd frontend && npm install",
+    "install:all": "npm run install:backend && npm run install:frontend",
+    "dev:backend": "cd backend && python main.py",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "build:frontend": "cd frontend && npm run build",
+    "preview:frontend": "cd frontend && npm run preview"
+  },
+  "keywords": [
+    "immobilier",
+    "ia",
+    "photos",
+    "saas",
+    "gemini"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

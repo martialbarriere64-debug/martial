@@ -1,0 +1,74 @@
+📦 ImmoGlam - Structure du Projet
+════════════════════════════════════════════════════════════════
+
+workspace/
+│
+├── 📄 README.md                      Documentation principale
+├── 📄 QUICKSTART.md                  Guide de démarrage rapide
+├── 📄 ARCHITECTURE.md                Documentation technique
+├── 📄 GEMINI_INTEGRATION.md          Guide intégration Gemini
+├── 📄 CONTRIBUTING.md                Guide de contribution
+├── 📄 PROJECT_SUMMARY.md             Résumé du projet
+├── 📄 LICENSE                        Licence MIT
+├── 📄 .gitignore                     Exclusions Git
+├── 📄 package.json                   Scripts npm racine
+│
+├── 🚀 start.sh                       Script démarrage Unix/Mac
+├── 🚀 start.bat                      Script démarrage Windows
+│
+├── 📁 backend/                       API FastAPI
+│   ├── 📄 main.py                    Serveur + endpoints + logique
+│   ├── 📄 requirements.txt           Dépendances Python
+│   ├── 📄 .env.example               Template variables d'env
+│   ├── 📄 .gitignore                 Exclusions Git backend
+│   ├── 📁 uploads/                   Images uploadées (auto-créé)
+│   └── 📁 enhanced/                  Images améliorées (auto-créé)
+│
+└── 📁 frontend/                      Application React
+    ├── 📄 index.html                 Template HTML
+    ├── 📄 package.json               Dépendances npm
+    ├── 📄 vite.config.js             Configuration Vite
+    ├── 📄 tailwind.config.js         Configuration TailwindCSS
+    ├── 📄 postcss.config.js          Configuration PostCSS
+    ├── 📄 .gitignore                 Exclusions Git frontend
+    │
+    └── 📁 src/                       Code source React
+        ├── 📄 main.jsx               Point d'entrée React
+        ├── 📄 App.jsx                Composant racine + Router
+        ├── 📄 index.css              Styles globaux + Tailwind
+        │
+        ├── 📁 components/            Composants réutilisables
+        │   └── 📄 Navbar.jsx         Barre de navigation
+        │
+        └── 📁 pages/                 Pages de l'application
+            ├── 📄 HomePage.jsx       Page d'accueil
+            ├── 📄 UploadPage.jsx     Page d'upload + prompt
+            └── 📄 ResultPage.jsx     Comparatif avant/après
+
+════════════════════════════════════════════════════════════════
+
+📊 STATISTIQUES
+───────────────
+- 30+ fichiers créés
+- 3 pages React
+- 1 composant React
+- 3 endpoints API
+- 6 fichiers de documentation
+- 2000+ lignes de code
+
+🎯 TECHNOLOGIES
+───────────────
+Frontend : React 18, TailwindCSS, Vite, React Router, Axios
+Backend  : FastAPI, Uvicorn, Pillow, Python 3.8+
+
+🚀 DÉMARRAGE RAPIDE
+───────────────────
+1. ./start.sh (Unix/Mac) ou start.bat (Windows)
+2. Ouvrir http://localhost:5173
+3. Consulter QUICKSTART.md pour plus de détails
+
+🔌 PROCHAINE ÉTAPE
+──────────────────
+Intégrer l'API Gemini (voir GEMINI_INTEGRATION.md)
+
+════════════════════════════════════════════════════════════════
